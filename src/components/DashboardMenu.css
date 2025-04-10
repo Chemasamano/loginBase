@@ -1,0 +1,50 @@
+.dashboard-menu {
+    background-color: rgb(149, 162, 201);
+    height: 80px;
+    width: 100vw; /* Ocupa todo el ancho de la ventana */
+    position: fixed; /* Fija la barra en la parte superior */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    display: flex;
+    justify-content: space-between; /* Espacia el logo, el mensaje y el botón */
+    align-items: center; /* Centra verticalmente el contenido */
+    padding-right: 0 20px; /* Espacio al borde derecho */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+.logo-image {
+  height: 60px; /* Ajusta la altura de la imagen según necesites */
+  width: auto;  /* Mantiene la proporción de la imagen */
+  border-radius: 10px; /* Redondea las esquinas de la imagen */
+  margin-left: 20px; /* Espacio entre el logo y el mensaje de bienvenida */
+}
+
+.welcome-message {
+  color: rgb(0, 0, 0); /* Color del texto del nombre de usuario */
+  margin: 0; /* Elimina márgenes innecesarios */
+  font-size: 1.5em; /* Ajusta el tamaño de la fuente si es necesario */
+}
+
+.logout-container {
+   /* No es estrictamente necesario, pero puede ayudar a agrupar elementos si añades más */
+}
+
+.logout-button {
+  /* Puedes añadir estilos específicos al botón de cerrar sesión aquí si lo deseas */
+  margin-right: 20px;
+}
+
+.dashboard-layout {
+    /* Ajusta el padding-top para evitar que el contenido se oculte debajo de la barra de menú fija */
+    padding-top: 80px; /* Altura de la barra de menú (100px) + un poco de espacio */
+    min-height: calc(100vh - 80px); /* Ajusta la altura mínima del contenido principal */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+/* Mantén los estilos existentes para header, main-content y footer en Dashboard.css */
