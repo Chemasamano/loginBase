@@ -1,5 +1,4 @@
-.dashboard-menu {
-    /* este es un comentario*/
+.dashboard-menu {  
     background-color: rgb(149, 162, 201);
     height: 80px;
     width: 100vw; /* Ocupa todo el ancho de la ventana */
@@ -47,5 +46,84 @@
     justify-content: flex-start;
     box-sizing: border-box;
 }
+
+.dashboard-nav {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Para que ocupe el espacio restante en el header */
+  justify-content: flex-start; /* Alinea los menús a la izquierda */
+  margin-left: 20px; /* Espacio desde el logo */
+}
+
+.main-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black; /* Color del texto del menú */
+}
+
+.menu-icon {
+  margin-right: 8px;
+  font-size: 1.2em; /* Tamaño del icono */
+}
+
+.has-children .arrow {
+  margin-left: auto;
+}
+
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 100%; /* Se muestra debajo del menú padre */
+  left: 0;
+  background-color: white; /* Fondo del submenú */
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: none; /* Inicialmente oculto */
+  min-width: 150px; /* Asegura un ancho mínimo para el submenú */
+}
+
+.submenu.open {
+  display: block;
+}
+
+.submenu .menu-item .menu-link {
+  padding: 10px 20px;
+}
+
+.submenu .menu-item .menu-icon {
+  margin-right: 12px; /* Más espacio para los iconos en el submenú si los hubiera */
+}
+
+.has-children:hover > .submenu {
+  display: block;
+}
+
+/* Estilos específicos para submenús anidados (nietos) */
+.submenu > .menu-item.has-children:hover > .submenu {
+  left: 100%; /* Se desplaza a la derecha del padre */
+  top: 0; /* Se alinea con la parte superior del padre */
+}
+
+/* Asegurarse de que los submenús no se salgan de la pantalla (opcional) */
+/* .submenu .submenu {
+  top: 0;
+  left: 100%;
+} */
 
 /* Mantén los estilos existentes para header, main-content y footer en Dashboard.css */

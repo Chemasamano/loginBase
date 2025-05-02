@@ -8,6 +8,7 @@ import DashboardUsuario from './dashboards/DashboardUsuario';
 import '../components/Dashboard.css';
 import '../components/DashboardMenu.css';
 import logo from '../img/logo.jpg';
+import DashboardMenu from '../components/DashboardMenu'; // Importa el componente del menú
 
 const Dashboard = () => {
 
@@ -56,11 +57,13 @@ const Dashboard = () => {
     console.log('Información del usuario en Dashboard:', user);
 
     let dashboardContent;
-    if (user.roles && user.roles.includes('Administrador')) {
+
+    //if (user.roles && user.roles.includes('Administrador')) {
+    if (user?.roles?.includes('Administrador')) {
         dashboardContent = <DashboardAdministrador />;
-    } else if (user.roles && user.roles.includes('Supervisor')) {
+    } else if (user?.roles?.includes('Supervisor')) {
         dashboardContent = <DashboardSupervisor />;
-    } else if (user.roles && user.roles.includes('Usuario')) {
+    } else if (user?.roles?.includes('Usuario')) {
         dashboardContent = <DashboardUsuario />;
     } else {
         dashboardContent = <div>Rol no reconocido o no asignado.</div>; // Manejo de roles desconocidos
@@ -70,7 +73,7 @@ const Dashboard = () => {
         <div className="dashboard-layout">
              <header className="dashboard-menu">
                 <img src={logo} alt="Logo" className="logo-image"/>
-                
+                {user?.menu && <DashboardMenu menu={user.menu} />} {/* Renderiza DashboardMenu solo si user.menu existe */}
                 <div className="logout-container">
                     <button onClick={handleLogout} className="btn btn-danger logout-button">Cerrar Sesión</button>
                 </div>

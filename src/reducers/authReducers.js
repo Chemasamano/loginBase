@@ -13,6 +13,7 @@ const initialState = {
           ...state,
           isAuthenticated: true,
           user: action.payload,
+          menu: action.payload.menu, // Extrae la propiedad 'menu' del payload
         };
       case LOGOUT:
         return {

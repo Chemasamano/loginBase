@@ -12,7 +12,7 @@ const LoginForm = () => {
   const [error, setError] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(''); // Limpia cualquier error previo
@@ -39,7 +39,7 @@ const LoginForm = () => {
       if (response.ok) {
           const data = await response.json();
           // Almacenar usuario, token y roles en el estado de la aplicación (Redux)
-          const loggedInUser = { username: username, token: data.token, roles: data.roles };
+          const loggedInUser = { username: username, token: data.token, roles: data.roles, menu: data.menu };
           console.log('Usuario logueado:', loggedInUser); // Mostrar en consola
 
           // Despachar la acción para Redux
