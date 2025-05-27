@@ -80,8 +80,7 @@ const Dashboard = () => {
                  
                 {/* Otros elementos comunes del header */}
              </header>
-             <div className="main-content">
-                <h1 className="welcome-message">Bienvenido {user.username}</h1>
+             <div className="main-content">                
                 {dashboardContent} {/* Renderiza el contenido específico del rol */}
              </div>
              <footer>

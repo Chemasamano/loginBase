@@ -1,10 +1,10 @@
-// DashboardAdministrador.js
 import React from 'react';
 import styles from './DashboardAdministrador.module.css';
 
-const DashboardAdministrador = () => {
+const DashboardAdministrador = ({ username }) => {
     return (
       <div>
+        <h1 className="welcome-message">Bienvenido Administrador: {username}</h1> {/* Mensaje de bienvenida aquí */}
         <h2>Panel de Administración</h2>
         {/* Contenido específico para administradores */}
         <ul>
